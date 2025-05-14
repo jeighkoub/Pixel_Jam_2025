@@ -4,7 +4,7 @@ var scoops: Array
 var time: float = 0.0
 var tilt_speed = PI/4     # radians per second
 var max_angle = PI / 4  # maximum lean angle (45 degrees)
-var SCOOP_RADIUS = 20
+var SCOOP_RADIUS = 10
 var L = 2 * SCOOP_RADIUS
 
 func _ready():
