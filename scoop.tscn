@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvstwqhhh7l3h"]
+
+[ext_resource type="Texture2D" uid="uid://dffny8swncq6d" path="res://assets/icecream/scoop.png" id="1_cuavs"]
+
+[node name="Scoop" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cuavs")
