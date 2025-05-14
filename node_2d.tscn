@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5k761j4ok8xt"]
+
+[ext_resource type="Script" path="res://tower.gd" id="1_gwaxm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2kuc"]
+radius = 19.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tower" type="Node2D" parent="."]
+position = Vector2(588, 552)
+script = ExtResource("1_gwaxm")
+
+[node name="Area2D" type="Area2D" parent="Tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Area2D"]
+shape = SubResource("CircleShape2D_r2kuc")
+
+[node name="Area2D2" type="Area2D" parent="Tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Area2D2"]
+shape = SubResource("CircleShape2D_r2kuc")
+
+[node name="Area2D3" type="Area2D" parent="Tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Area2D3"]
+shape = SubResource("CircleShape2D_r2kuc")
+
+[node name="Area2D4" type="Area2D" parent="Tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Area2D4"]
+shape = SubResource("CircleShape2D_r2kuc")
+
+[node name="Area2D5" type="Area2D" parent="Tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Area2D5"]
+shape = SubResource("CircleShape2D_r2kuc")
+
+[node name="Area2D6" type="Area2D" parent="Tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Area2D6"]
+shape = SubResource("CircleShape2D_r2kuc")
