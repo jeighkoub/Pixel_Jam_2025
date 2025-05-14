@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5k761j4ok8xt"]
+[gd_scene load_steps=3 format=3 uid="uid://b41f5qj03ssmy"]
 
 [ext_resource type="Script" path="res://tower.gd" id="1_gwaxm"]
-[ext_resource type="PackedScene" path="res://scoop.tscn" id="2_psj1k"]
+[ext_resource type="PackedScene" uid="uid://dvstwqhhh7l3h" path="res://scoop.tscn" id="2_psj1k"]
 
 [node name="Node2D" type="Node2D"]
 

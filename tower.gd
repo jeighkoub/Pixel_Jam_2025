@@ -4,7 +4,7 @@ var scoops: Array
 var time: float = 0.0
 var tilt_speed = PI/4     # radians per second
 var max_angle = PI / 4  # maximum lean angle (45 degrees)
-var SCOOP_RADIUS = 10
+var SCOOP_RADIUS = 8
 var L = 2 * SCOOP_RADIUS
 
 func _ready():
@@ -14,6 +14,7 @@ func _ready():
 func _process(delta: float) -> void:
 	time += delta
 	var theta = max_angle * sin(time * tilt_speed)
+	print(theta)
 	
 	for i in range(scoops.size()):
 		var x: float = 0
@@ -21,4 +22,6 @@ func _process(delta: float) -> void:
 		for k in range(i):
 			x += L * sin(theta*k/4)
 			y += -1 * L * cos(theta*k/4)
-		scoops[i].position = Vector2(x, y)
+		var scoop: Node2D = scoops[i]
+		scoop.global_rotation = theta*i/12
+		scoop.position = Vector2(x, y)
