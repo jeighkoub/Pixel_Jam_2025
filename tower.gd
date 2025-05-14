@@ -19,6 +19,6 @@ func _process(delta: float) -> void:
 		var x: float = 0
 		var y: float = 0
 		for k in range(i):
-			x += L * sin(theta*k)
-			y += -1 * L * cos(theta*k)
+			x += L * sin(theta*k/4)
+			y += -1 * L * cos(theta*k/4)
 		scoops[i].position = Vector2(x, y)
