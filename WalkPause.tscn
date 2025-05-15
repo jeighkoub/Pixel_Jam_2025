@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7gswtspo7oa4"]
 
 [ext_resource type="Texture2D" uid="uid://chnlekxuke3px" path="res://assets/truck_interior/walk_pause.png" id="1_cqpdr"]
-[ext_resource type="Texture2D" uid="uid://xq4w5yc31u06" path="res://assets/icecream/scoop.png" id="2_6vnvn"]
+[ext_resource type="Texture2D" uid="uid://xq4w5yc31u06" path="res://assets/icecream/scoop_red.png" id="2_6vnvn"]
 
 [node name="WalkPause" type="Sprite2D"]
 position = Vector2(160, 99)
