@@ -1,5 +1,8 @@
 extends Node2D
 
+# AI SLOP.   NEEDS TO CHANGE. JUST USED TO VISUALIZE
+
+
 # Reference to the particle component
 @export var particle_component: Node2D
 
