@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://e40d0o4tc13s"]
 
 [ext_resource type="Texture2D" uid="uid://dw3gxmb3ysbel" path="res://vfx/plop_particle_texture.png" id="1_w1dkm"]
-[ext_resource type="Texture2D" uid="uid://xq4w5yc31u06" path="res://assets/icecream/scoop.png" id="2_nav88"]
+[ext_resource type="Script" path="res://vfx/plop_particles_pink.gd" id="1_w5oag"]
 
 [sub_resource type="Gradient" id="Gradient_sfon7"]
 offsets = PackedFloat32Array(0, 0.811475, 1)
@@ -83,6 +83,7 @@ scale_curve = SubResource("CurveTexture_edykr")
 color_ramp = SubResource("GradientTexture1D_stmhu")
 
 [node name="PlopParticles" type="Node2D"]
+script = ExtResource("1_w5oag")
 
 [node name="FrontSideLeft" type="GPUParticles2D" parent="."]
 z_index = 3
@@ -107,8 +108,3 @@ process_material = SubResource("ParticleProcessMaterial_8pjpr")
 texture = ExtResource("1_w1dkm")
 lifetime = 1.5
 explosiveness = 1.0
-
-[node name="Scoop" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(0, -7)
-texture = ExtResource("2_nav88")

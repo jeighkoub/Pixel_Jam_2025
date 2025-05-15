@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvstwqhhh7l3h"]
+[gd_scene load_steps=3 format=3 uid="uid://fq3a7ac4jr00"]
 
-[ext_resource type="Texture2D" uid="uid://dffny8swncq6d" path="res://assets/icecream/scoop.png" id="1_cuavs"]
+[ext_resource type="Texture2D" uid="uid://xq4w5yc31u06" path="res://assets/icecream/scoop.png" id="1_cuavs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iucnk"]
 radius = 7.0
