@@ -265,6 +265,7 @@ offset_bottom = 299.0
 texture = SubResource("CanvasTexture_udmeg")
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 mouse_filter = 2

@@ -6,11 +6,12 @@ point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_l3q71"]
 offsets = PackedFloat32Array(0, 0.6, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.172549, 0.909804, 0.960784, 1, 0, 0.584314, 0.913725, 0)
+colors = PackedColorArray(1, 1, 1, 1, 0.172549, 0.909804, 0.960784, 0.784314, 0, 0.584314, 0.913725, 0)
 
 [node name="Snowflakes" type="CPUParticles2D"]
 z_index = 1
 amount = 48
+lifetime_randomness = 0.65
 emission_shape = 3
 emission_rect_extents = Vector2(40, 10)
 direction = Vector2(0, -1)

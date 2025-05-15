@@ -472,6 +472,7 @@ grow_vertical = 2
 script = ExtResource("1_tqept")
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 mouse_filter = 2
@@ -565,6 +566,7 @@ color_two = Color(0.172549, 0.909804, 0.960784, 1)
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
+layout_mode = 0
 offset_right = 342.0
 offset_bottom = 235.0
 texture = SubResource("CanvasTexture_x2k5p")

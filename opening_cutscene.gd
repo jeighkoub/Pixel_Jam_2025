@@ -23,11 +23,11 @@ func _ready():
 	start_cutscene()
 
 func start_cutscene():
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	tween = create_tween()
 	tween.tween_property(camera, "position", Vector2(480, 90), 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	
 
 	if color_rect:
