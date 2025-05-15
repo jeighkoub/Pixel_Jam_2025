@@ -14,7 +14,6 @@ func _ready():
 func _process(delta: float) -> void:
 	time += delta
 	var theta = max_angle * sin(time * tilt_speed)
-	print(theta)
 	
 	for i in range(scoops.size()):
 		var x: float = 0

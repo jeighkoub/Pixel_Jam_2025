@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://cj3urrn8xrb70"]
+[gd_scene load_steps=3 format=3 uid="uid://cj3urrn8xrb70"]
+
+[ext_resource type="Script" path="res://target.gd" id="1_nhrxb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxqew"]
+radius = 2.0
+height = 6.0
 
 [node name="Target" type="Node2D"]
+script = ExtResource("1_nhrxb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_gxqew")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
