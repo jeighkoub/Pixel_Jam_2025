@@ -1,4 +1,18 @@
-[gd_scene format=3 uid="uid://e51wnm27komb"]
+[gd_scene load_steps=8 format=3 uid="uid://e51wnm27komb"]
+
+[ext_resource type="Script" path="res://index.gd" id="1_cpq2g"]
+[ext_resource type="Texture2D" uid="uid://cd2q8kbbm0qco" path="res://assets/cutscene/broken_truck.png" id="1_r1opc"]
+[ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="2_q5j08"]
+[ext_resource type="Script" path="res://blink_label.gd" id="3_qleu5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yvqun"]
+diffuse_texture = ExtResource("1_r1opc")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_12qi1"]
+specular_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dfqld"]
+specular_color = Color(0, 0, 0, 1)
 
 [node name="Index" type="Control"]
 layout_mode = 3
@@ -7,3 +21,41 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cpq2g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("CanvasTexture_yvqun")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+layout_mode = 0
+offset_top = 47.0
+offset_right = 328.0
+offset_bottom = 258.0
+texture = SubResource("CanvasTexture_12qi1")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.352941)
+layout_mode = 0
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 327.0
+offset_bottom = 234.0
+texture = SubResource("CanvasTexture_dfqld")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 122.0
+offset_right = 267.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0.996078, 0.905882, 0.380392, 1)
+theme_override_fonts/font = ExtResource("2_q5j08")
+text = "Press Space To Get Hired"
+script = ExtResource("3_qleu5")
+color_one = Color(0.996078, 0.905882, 0.380392, 1)
+color_two = Color(0.996078, 0.682353, 0.203922, 1)

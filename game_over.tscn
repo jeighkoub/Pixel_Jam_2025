@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://4kvibjmvkh4b"]
+[gd_scene load_steps=9 format=4 uid="uid://4kvibjmvkh4b"]
 
 [ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="1_pwbk5"]
 [ext_resource type="Script" path="res://game_over.gd" id="1_rhafm"]
+[ext_resource type="Script" path="res://blink_label.gd" id="3_g4mvy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_udmeg"]
 specular_color = Color(0, 0, 0, 1)
@@ -308,3 +309,5 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.584314, 0.913725, 1)
 theme_override_fonts/font = ExtResource("1_pwbk5")
 text = "Press Space To Continue"
+script = ExtResource("3_g4mvy")
+color_one = Color(0.172549, 0.909804, 0.960784, 1)

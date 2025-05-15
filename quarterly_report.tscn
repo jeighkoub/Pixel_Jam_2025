@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://cb4bp5deiwpic"]
+[gd_scene load_steps=10 format=4 uid="uid://cb4bp5deiwpic"]
 
 [ext_resource type="Script" path="res://quarterly_report.gd" id="1_tqept"]
 [ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="2_i35h7"]
+[ext_resource type="Script" path="res://blink_label.gd" id="3_kiu2q"]
 
 [sub_resource type="Image" id="Image_fxpix"]
 data = {
@@ -557,6 +558,9 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.584314, 0.913725, 1)
 theme_override_fonts/font = ExtResource("2_i35h7")
 text = "Press Space To Continue"
+script = ExtResource("3_kiu2q")
+color_one = Color(0, 0.584314, 0.913725, 1)
+color_two = Color(0.172549, 0.909804, 0.960784, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)
