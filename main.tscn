@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfa1pp2khtna8"]
+[gd_scene load_steps=16 format=3 uid="uid://cfa1pp2khtna8"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_g1irq"]
 [ext_resource type="Texture2D" uid="uid://byo6w3xen843v" path="res://assets/truck_interior/order_walkup_firsthalf_1.png" id="2_6eull"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://n78tfei6b8fj" path="res://assets/fonts/icecream_analog.ttf" id="10_byept"]
 [ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="11_djkbk"]
 [ext_resource type="Script" path="res://score_label.gd" id="12_2e2fe"]
+[ext_resource type="PackedScene" uid="uid://d3wphvmf0fykx" path="res://number_snowflakes.tscn" id="13_w2te4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dt5gt"]
 specular_color = Color(0.172549, 0.909804, 0.960784, 1)
@@ -85,4 +86,8 @@ offset_bottom = 133.0
 theme_override_colors/font_color = Color(0.0941176, 0.0784314, 0.145098, 1)
 theme_override_fonts/font = ExtResource("11_djkbk")
 theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
 script = ExtResource("12_2e2fe")
+
+[node name="Snowflakes" parent="." instance=ExtResource("13_w2te4")]
+position = Vector2(254, 131)
