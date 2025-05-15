@@ -26,4 +26,4 @@ func start_cutscene():
 		tween.tween_property(color_rect, "color", Color(0, 0, 0, 1.0), 1.0).set_trans(Tween.TRANS_LINEAR)
 		await tween.finished
 
-		get_tree().change_scene_to_file("res://main.tscn")
+		get_tree().change_scene_to_file("res://quarterly_report.tscn")
