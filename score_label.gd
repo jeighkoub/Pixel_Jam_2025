@@ -67,8 +67,11 @@ func _ready() -> void:
 		particles.emitting = false
 
 func _input(event: InputEvent) -> void:
+	# TODO REMOVE THIS HERE BELOW THIS IS JUST FOR TESTING I HOPE U SEE THIS
 	if event.is_action_pressed("ui_accept"):
 		points = randi_range(0, 10_000)
+
+
 
 func _process(delta: float) -> void:
 	if is_counting:

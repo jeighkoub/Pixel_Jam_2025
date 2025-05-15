@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://4kvibjmvkh4b"]
+[gd_scene load_steps=8 format=4 uid="uid://4kvibjmvkh4b"]
 
 [ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="1_pwbk5"]
+[ext_resource type="Script" path="res://game_over.gd" id="1_rhafm"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_udmeg"]
 specular_color = Color(0, 0, 0, 1)
@@ -252,6 +253,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rhafm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)

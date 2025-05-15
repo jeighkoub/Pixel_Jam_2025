@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://cb4bp5deiwpic"]
+[gd_scene load_steps=9 format=4 uid="uid://cb4bp5deiwpic"]
 
-[ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="1_dbrce"]
+[ext_resource type="Script" path="res://quarterly_report.gd" id="1_tqept"]
+[ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="2_i35h7"]
 
 [sub_resource type="Image" id="Image_fxpix"]
 data = {
@@ -467,6 +468,7 @@ offset_right = -320.0
 offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tqept")
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 offset_right = 320.0
@@ -484,7 +486,7 @@ layout_mode = 2
 [node name="Title" type="Label" parent="CenterContainer2/VBoxContainer2/CenterContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.752941, 0.796078, 0.862745, 1)
-theme_override_fonts/font = ExtResource("1_dbrce")
+theme_override_fonts/font = ExtResource("2_i35h7")
 theme_override_font_sizes/font_size = 16
 text = "Quarter Completed"
 
@@ -497,7 +499,7 @@ layout_mode = 2
 [node name="Revenue" type="Label" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.388235, 0.780392, 0.301961, 1)
-theme_override_fonts/font = ExtResource("1_dbrce")
+theme_override_fonts/font = ExtResource("2_i35h7")
 text = "Revenue:"
 
 [node name="Control" type="Control" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer"]
@@ -507,7 +509,7 @@ size_flags_horizontal = 3
 [node name="RevenueNumber" type="Label" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.388235, 0.780392, 0.301961, 1)
-theme_override_fonts/font = ExtResource("1_dbrce")
+theme_override_fonts/font = ExtResource("2_i35h7")
 text = "$99999"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer2/VBoxContainer2/VBoxContainer"]
@@ -516,7 +518,7 @@ layout_mode = 2
 [node name="Expenses" type="Label" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.894118, 0.231373, 0.266667, 1)
-theme_override_fonts/font = ExtResource("1_dbrce")
+theme_override_fonts/font = ExtResource("2_i35h7")
 text = "Expenses:"
 
 [node name="Control2" type="Control" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer2"]
@@ -536,7 +538,7 @@ layout_mode = 2
 [node name="Profit" type="Label" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.996078, 0.682353, 0.203922, 1)
-theme_override_fonts/font = ExtResource("1_dbrce")
+theme_override_fonts/font = ExtResource("2_i35h7")
 text = "Profit:"
 
 [node name="Control3" type="Control" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer3"]
@@ -553,7 +555,7 @@ horizontal_alignment = 2
 [node name="Exit" type="Label" parent="CenterContainer2/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.584314, 0.913725, 1)
-theme_override_fonts/font = ExtResource("1_dbrce")
+theme_override_fonts/font = ExtResource("2_i35h7")
 text = "Press Space To Continue"
 
 [node name="TextureRect" type="TextureRect" parent="."]
