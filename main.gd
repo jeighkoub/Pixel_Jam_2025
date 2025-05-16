@@ -38,6 +38,7 @@ func _on_hit_target():
 	main_scoop.global_position = Vector2(-100,0) # move away from collision detection
 
 	#plop particles
+	#TODO
 	
 	#put scoop on tower
 	var scoops_arr: Array = tower.scoops
@@ -48,9 +49,15 @@ func _on_hit_target():
 	
 	
 	#score
+	#TODO
+	
+	#move dropper and camera up
+	#TODO
 	
 	#wait and reload dropper
 	dropper.create_scoop("blue")
+	
+	
 	
 
 func _process(delta: float) -> void:
