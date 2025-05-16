@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c8jca71xb6eai" path="res://assets/truck_interior/order_walkup_firsthalf_4.png" id="5_iwvww"]
 [ext_resource type="Texture2D" uid="uid://njcljdkjcbrk" path="res://assets/truck_interior/order_walkup_firsthalf_5.png" id="6_fcjci"]
 [ext_resource type="Texture2D" uid="uid://dhu0os8rjdr66" path="res://assets/truck_interior/order_walkup_firsthalf_6.png" id="7_lp8r3"]
-[ext_resource type="Texture2D" uid="uid://bm6e5di3s5jma" path="res://assets/truck_interior/truck_interior.png" id="8_uf7eh"]
+[ext_resource type="Texture2D" uid="uid://cs363cfwpd8pi" path="res://assets/truck_interior/truck_interior_v2.png" id="8_ggke1"]
 [ext_resource type="PackedScene" uid="uid://b7gswtspo7oa4" path="res://WalkPause.tscn" id="9_8c8p5"]
 [ext_resource type="FontFile" uid="uid://n78tfei6b8fj" path="res://assets/fonts/icecream_analog.ttf" id="10_byept"]
 [ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="11_djkbk"]
@@ -58,7 +58,7 @@ sprite_frames = SubResource("SpriteFrames_rshw3")
 [node name="TruckInterior" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(160, 0)
-texture = ExtResource("8_uf7eh")
+texture = ExtResource("8_ggke1")
 
 [node name="WalkPause" parent="." instance=ExtResource("9_8c8p5")]
 visible = false

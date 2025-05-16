@@ -15,6 +15,9 @@ var hit_effect_active: bool = false
 @onready var particles: CPUParticles2D = $"../Snowflakes"
 
 func _ready() -> void:
+	# Ensure initial opacity
+	modulate.a = 1.0
+	
 	# Create and assign ShaderMaterial
 	var shader = Shader.new()
 	shader.code = """
@@ -23,7 +26,7 @@ func _ready() -> void:
 		uniform float hit_effect : hint_range(0,1) = 0.0;
 		uniform float shake_intensity = 5.0;
 		uniform vec4 flash_color : source_color = vec4(0.0, 0.58, 0.91, 1.0);
-		uniform vec4 black_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
+		uniform vec4 black_color : source_color = vec4(1.0, 1.0, 1.0, 1.0); // White (#FFFFFF)
 
 		float rand(vec2 co) {
 			return fract(sin(dot(co, vec2(12.9898,78.233))) * 43758.5453);
@@ -71,23 +74,39 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		points = randi_range(0, 10_000)
 
-
-
 func _process(delta: float) -> void:
 	if is_counting:
 		counting_timer += delta
 		if counting_timer > 0.5 and not hit_effect_active:
 			_activate_hit_effect()
 		# Start particles at 3 seconds
-		if counting_timer >= 2.0 and particles and not particles.emitting:
+		if counting_timer >= 3.0 and particles and not particles.emitting:
 			particles.emitting = true
 
 func _on_points_set(new_value: int) -> void:
 	var score_change = abs(new_value - previous_points)
 	points = new_value
 	
+	# Reset opacity for new score
+	modulate.a = 1.0
+	
 	if tween:
+		# Early end: Show last number in white for 2 seconds
 		tween.kill()
+		var early_tween = create_tween()
+		early_tween.tween_callback(func(): shader_material.set_shader_parameter("hit_effect", 0.0)) # Set to white
+		early_tween.tween_interval(2.0) # Hold for 2 seconds
+		# Reset state
+		is_counting = false
+		counting_timer = 0.0
+		hit_effect_active = false
+		if animation_player:
+			animation_player.stop()
+		if sfx_player:
+			sfx_player.stop()
+		if particles:
+			particles.emitting = false
+	
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	
 	# Set duration based on score change
@@ -95,14 +114,14 @@ func _on_points_set(new_value: int) -> void:
 	tween.tween_property(self, "fake_points", points, count_duration)
 	
 	if score_change >= LARGE_CHANGE_THRESHOLD:
-		# Large changes: black to #0095e9
+		# Large changes: white to #0095e9
 		is_counting = true
 		counting_timer = 0.0
 		hit_effect_active = false
 		shader_material.set_shader_parameter("hit_effect", 0.0)
 		tween.tween_callback(_on_tween_finished)
 	else:
-		# Small changes: stay black
+		# Small changes: stay white
 		is_counting = false
 		hit_effect_active = false
 		shader_material.set_shader_parameter("hit_effect", 0.01)
@@ -143,10 +162,14 @@ func _on_tween_finished() -> void:
 	is_counting = false
 	counting_timer = 0.0
 	hit_effect_active = false
-	shader_material.set_shader_parameter("hit_effect", 0.0)
+	shader_material.set_shader_parameter("hit_effect", 0.0) # Set to white
 	if animation_player:
 		animation_player.stop()
 	if sfx_player:
 		sfx_player.stop()
 	if particles:
 		particles.emitting = false
+	
+	# Show final number in white for 2 seconds
+	var final_tween = create_tween()
+	final_tween.tween_interval(2.0) # Hold for 2 seconds
