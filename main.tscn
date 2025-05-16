@@ -52,6 +52,7 @@ target = NodePath("Tower/Target")
 dropper = NodePath("Dropper")
 main_scoop = NodePath("Scoop")
 tower = NodePath("Tower")
+scoop_scene = ExtResource("17_ccjbw")
 
 [node name="WalkStart" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -104,10 +105,6 @@ script = ExtResource("12_2e2fe")
 [node name="Snowflakes" parent="." instance=ExtResource("13_w2te4")]
 position = Vector2(252, 48)
 
-[node name="Cone" type="Sprite2D" parent="."]
-position = Vector2(165, 81)
-texture = ExtResource("16_cwrmj")
-
 [node name="Scoop" parent="." instance=ExtResource("17_ccjbw")]
 position = Vector2(167, 10)
 
@@ -120,6 +117,10 @@ position = Vector2(165, 72)
 
 [node name="Target" parent="Tower" instance=ExtResource("15_gdfsq")]
 position = Vector2(-4.6136, 16.2043)
+
+[node name="Cone" type="Sprite2D" parent="."]
+position = Vector2(165, 81)
+texture = ExtResource("16_cwrmj")
 
 [node name="BrokenTruck" type="Sprite2D" parent="."]
 z_index = -1

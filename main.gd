@@ -7,8 +7,10 @@ extends Node2D
 @export var dropper: Node2D
 @export var main_scoop: Scoop #reuse the same scoop to aovid rewiring
 @export var tower: Tower
+@export var scoop_scene: PackedScene
 # State to prevent repeated triggers
 var is_order_active: bool = false
+
 
 func _ready() -> void:
 	
@@ -27,17 +29,21 @@ func _ready() -> void:
 	
 
 func _on_hit_target():
+	print("hit")
 	main_scoop.visible = false
 	main_scoop.velocity = Vector2.ZERO
-	main_scoop.global_position += Vector2(0,-200) # move away from collision detection
+	print(main_scoop.global_position)
+	main_scoop.global_position = Vector2(-100,0) # move away from collision detection
+	print("moved away")
+	print(main_scoop.global_position)
 	
 	#plop particles
 	
 	#put scoop on tower
 	var scoops_arr: Array = tower.scoops
-	var new_scoop: Scoop = Scoop.new()
-	new_scoop.setup(main_scoop.get_node("Sprite2D").texture)
+	var new_scoop: Scoop = scoop_scene.instantiate()
 	tower.add_child(new_scoop)
+	new_scoop.setup(main_scoop.get_node("Sprite2D").texture)
 	scoops_arr.insert(scoops_arr.size()-1, new_scoop) # shift target to end
 	
 	
@@ -45,6 +51,7 @@ func _on_hit_target():
 	#score
 	
 	#wait and reload dropper
+	dropper.create_scoop("blue")
 	
 
 func _process(delta: float) -> void:
