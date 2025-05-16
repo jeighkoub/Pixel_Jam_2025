@@ -4,6 +4,7 @@ extends Node2D
 # Reference to the particle component
 @export var particle_component: Node2D
 @export var target: Target
+@export var dropper: Node2D
 
 # State to prevent repeated triggers
 var is_order_active: bool = false
@@ -16,6 +17,10 @@ func _ready() -> void:
 		push_error("WalkPause/Sprite node not found!")
 	
 	#connections
+	target.hit_target.connect(_on_hit_target)
+
+func _on_hit_target():
+	pass
 	
 
 func _process(delta: float) -> void:

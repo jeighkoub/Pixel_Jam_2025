@@ -48,9 +48,10 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("target")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("target", "dropper")]
 script = ExtResource("1_g1irq")
 target = NodePath("Tower/Target")
+dropper = NodePath("Dropper")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(0.172549, 0.909804, 0.960784, 1)
