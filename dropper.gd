@@ -8,10 +8,17 @@ extends Node2D
 
 
 func create_scoop(color: String) -> void:
-	pass
+	scoop.global_position = self.global_position
+	match color:
+		"blue":
+			scoop.get_node("Sprite2D").texture = blue
+		"green":
+			scoop.get_node("Sprite2D").texture = green
+		"red":
+			scoop.get_node("Sprite2D").texture = red
 
 func drop():
-	pass
+	scoop.velocity = Vector2(0,100)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("space_bar"):
