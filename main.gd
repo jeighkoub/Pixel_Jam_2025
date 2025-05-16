@@ -36,10 +36,10 @@ func _on_hit_target():
 	main_scoop.velocity = Vector2.ZERO
 	main_scoop.set_physics_process(false)
 	main_scoop.global_position = Vector2(-100,0) # move away from collision detection
-
+	var target_position = main_scoop.global_position
 	#plop particles
-	#TODO
-	
+	#TODO  Add color checker
+
 	#put scoop on tower
 	var scoops_arr: Array = tower.scoops
 	var new_scoop: Scoop = scoop_scene.instantiate()
