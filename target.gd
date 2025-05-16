@@ -1,4 +1,5 @@
 extends Node2D
+class_name Target
 
 signal hit_target(area: Area2D)
 

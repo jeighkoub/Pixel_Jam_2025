@@ -3,6 +3,7 @@ extends Node2D
 
 # Reference to the particle component
 @export var particle_component: Node2D
+@export var target: Target
 
 # State to prevent repeated triggers
 var is_order_active: bool = false
@@ -13,6 +14,9 @@ func _ready() -> void:
 		$WalkPause/Sprite.visible = false
 	else:
 		push_error("WalkPause/Sprite node not found!")
+	
+	#connections
+	
 
 func _process(delta: float) -> void:
 	# Trigger customer order on spacebar (replace with your event)

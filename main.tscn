@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cfa1pp2khtna8"]
+[gd_scene load_steps=21 format=3 uid="uid://cfa1pp2khtna8"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_g1irq"]
 [ext_resource type="Texture2D" uid="uid://d3feptx88eswe" path="res://assets/truck_interior/order_walkup_firsthalf_1.png" id="2_6eull"]
@@ -13,6 +13,8 @@
 [ext_resource type="FontFile" uid="uid://ie8mvobpepsw" path="res://assets/fonts/KarenFat.ttf" id="11_djkbk"]
 [ext_resource type="Script" path="res://score_label.gd" id="12_2e2fe"]
 [ext_resource type="PackedScene" uid="uid://d3wphvmf0fykx" path="res://number_snowflakes.tscn" id="13_w2te4"]
+[ext_resource type="PackedScene" uid="uid://c80uv33pm8qys" path="res://tower.tscn" id="14_gmms0"]
+[ext_resource type="PackedScene" uid="uid://cj3urrn8xrb70" path="res://target.tscn" id="15_gdfsq"]
 [ext_resource type="Texture2D" uid="uid://1my10olw11of" path="res://assets/icecream/cone.png" id="16_cwrmj"]
 [ext_resource type="PackedScene" uid="uid://fq3a7ac4jr00" path="res://scoop.tscn" id="17_ccjbw"]
 [ext_resource type="PackedScene" uid="uid://dlc02e3aojldh" path="res://dropper.tscn" id="18_vmu3t"]
@@ -46,8 +48,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("target")]
 script = ExtResource("1_g1irq")
+target = NodePath("Tower/Target")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(0.172549, 0.909804, 0.960784, 1)
@@ -117,3 +120,9 @@ position = Vector2(167, 10)
 [node name="Dropper" parent="." node_paths=PackedStringArray("scoop") instance=ExtResource("18_vmu3t")]
 position = Vector2(167, 15)
 scoop = NodePath("../Scoop")
+
+[node name="Tower" parent="." instance=ExtResource("14_gmms0")]
+position = Vector2(165, 72)
+
+[node name="Target" parent="Tower" instance=ExtResource("15_gdfsq")]
+position = Vector2(-4.6136, 16.2043)
