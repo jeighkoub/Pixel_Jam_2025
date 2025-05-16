@@ -46,11 +46,12 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("target", "dropper", "main_scoop")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("target", "dropper", "main_scoop", "tower")]
 script = ExtResource("1_g1irq")
 target = NodePath("Tower/Target")
 dropper = NodePath("Dropper")
 main_scoop = NodePath("Scoop")
+tower = NodePath("Tower")
 
 [node name="WalkStart" type="AnimatedSprite2D" parent="."]
 visible = false

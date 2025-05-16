@@ -6,7 +6,7 @@ extends Node2D
 @export var target: Target
 @export var dropper: Node2D
 @export var main_scoop: Scoop #reuse the same scoop to aovid rewiring
-
+@export var tower: Tower
 # State to prevent repeated triggers
 var is_order_active: bool = false
 
@@ -32,6 +32,15 @@ func _on_hit_target():
 	main_scoop.global_position += Vector2(0,-200) # move away from collision detection
 	
 	#plop particles
+	
+	#put scoop on tower
+	var scoops_arr: Array = tower.scoops
+	var new_scoop: Scoop = Scoop.new()
+	new_scoop.setup(main_scoop.get_node("Sprite2D").texture)
+	tower.add_child(new_scoop)
+	scoops_arr.insert(scoops_arr.size()-1, new_scoop) # shift target to end
+	
+	
 	
 	#score
 	

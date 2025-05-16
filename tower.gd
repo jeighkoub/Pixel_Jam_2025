@@ -1,4 +1,5 @@
 extends Node2D
+class_name Tower
 
 var scoops: Array
 var time: float = 0.0
