@@ -125,4 +125,4 @@ scoop = NodePath("../Scoop")
 position = Vector2(165, 72)
 
 [node name="Target" parent="Tower" instance=ExtResource("15_gdfsq")]
-position = Vector2(-4.6136, 16.2043)
+position = Vector2(0, -7)
