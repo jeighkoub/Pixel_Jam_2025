@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlc02e3aojldh"]
+[gd_scene load_steps=5 format=3 uid="uid://dlc02e3aojldh"]
 
 [ext_resource type="Script" path="res://dropper.gd" id="1_kn3d7"]
+[ext_resource type="Texture2D" uid="uid://ba72dpqk8nbqt" path="res://assets/icecream/scoop_blue.png" id="2_jcea2"]
+[ext_resource type="Texture2D" uid="uid://cnfx78x7utx4e" path="res://assets/icecream/scoop_green.png" id="3_ucbw1"]
+[ext_resource type="Texture2D" uid="uid://dd344yu6hejqy" path="res://assets/icecream/scoop_red.png" id="4_it73e"]
 
 [node name="Dropper" type="Node2D"]
 script = ExtResource("1_kn3d7")
+blue = ExtResource("2_jcea2")
+green = ExtResource("3_ucbw1")
+red = ExtResource("4_it73e")

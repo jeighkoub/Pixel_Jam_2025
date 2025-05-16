@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var scoop: Node2D #Scoop
+@export var scoop: Scoop
 
 @export var blue: Resource
 @export var green: Resource
