@@ -12,4 +12,6 @@ func setup(txtr: Resource) -> void:
 		push_error("scoop.gd: Sprite2D not found or is not a Sprite2D node.")
 
 func _physics_process(delta: float) -> void:
+	if not self.visible:
+		return
 	global_position += velocity * delta

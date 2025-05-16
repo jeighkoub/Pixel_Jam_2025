@@ -115,8 +115,9 @@ scoop = NodePath("../Scoop")
 [node name="Tower" parent="." instance=ExtResource("14_gmms0")]
 position = Vector2(165, 72)
 
-[node name="Target" parent="Tower" instance=ExtResource("15_gdfsq")]
+[node name="Target" parent="Tower" node_paths=PackedStringArray("falling_scoop") instance=ExtResource("15_gdfsq")]
 position = Vector2(-4.6136, 16.2043)
+falling_scoop = NodePath("../../Scoop")
 
 [node name="Cone" type="Sprite2D" parent="."]
 position = Vector2(165, 81)

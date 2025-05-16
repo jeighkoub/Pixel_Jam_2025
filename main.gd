@@ -29,14 +29,18 @@ func _ready() -> void:
 	
 
 func _on_hit_target():
+	if not main_scoop.visible:
+		print("skipping _on_hit_target")
+		return
 	print("hit")
 	main_scoop.visible = false
 	main_scoop.velocity = Vector2.ZERO
 	print(main_scoop.global_position)
+	main_scoop.set_physics_process(false)
 	main_scoop.global_position = Vector2(-100,0) # move away from collision detection
 	print("moved away")
 	print(main_scoop.global_position)
-	
+
 	#plop particles
 	
 	#put scoop on tower
@@ -45,7 +49,6 @@ func _on_hit_target():
 	tower.add_child(new_scoop)
 	new_scoop.setup(main_scoop.get_node("Sprite2D").texture)
 	scoops_arr.insert(scoops_arr.size()-1, new_scoop) # shift target to end
-	
 	
 	
 	#score
