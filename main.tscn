@@ -1,26 +1,24 @@
 [gd_scene load_steps=21 format=3 uid="uid://cfa1pp2khtna8"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_g1irq"]
-[ext_resource type="Texture2D" uid="uid://d3feptx88eswe" path="res://assets/truck_interior/order_walkup_firsthalf_1.png" id="2_6eull"]
-[ext_resource type="Texture2D" uid="uid://ddpeow8ctmnhx" path="res://assets/truck_interior/order_walkup_firsthalf_2.png" id="3_40duv"]
-[ext_resource type="Texture2D" uid="uid://d3voh8lir4smx" path="res://assets/truck_interior/order_walkup_firsthalf_3.png" id="4_lfkhs"]
-[ext_resource type="Texture2D" uid="uid://ce7kfkyhix3gn" path="res://assets/truck_interior/order_walkup_firsthalf_4.png" id="5_iwvww"]
-[ext_resource type="Texture2D" uid="uid://djnk7p54ioj12" path="res://assets/truck_interior/order_walkup_firsthalf_5.png" id="6_fcjci"]
-[ext_resource type="Texture2D" uid="uid://vw5ma4p7ju2b" path="res://assets/truck_interior/order_walkup_firsthalf_6.png" id="7_lp8r3"]
-[ext_resource type="Texture2D" uid="uid://cnejqag2d001p" path="res://assets/truck_interior/truck_interior.png" id="8_uf7eh"]
+[ext_resource type="Texture2D" uid="uid://byo6w3xen843v" path="res://assets/truck_interior/order_walkup_firsthalf_1.png" id="2_6eull"]
+[ext_resource type="Texture2D" uid="uid://c5ky524hmcp8b" path="res://assets/truck_interior/order_walkup_firsthalf_2.png" id="3_40duv"]
+[ext_resource type="Texture2D" uid="uid://bwo0vftsuid3s" path="res://assets/truck_interior/order_walkup_firsthalf_3.png" id="4_lfkhs"]
+[ext_resource type="Texture2D" uid="uid://c8jca71xb6eai" path="res://assets/truck_interior/order_walkup_firsthalf_4.png" id="5_iwvww"]
+[ext_resource type="Texture2D" uid="uid://njcljdkjcbrk" path="res://assets/truck_interior/order_walkup_firsthalf_5.png" id="6_fcjci"]
+[ext_resource type="Texture2D" uid="uid://dhu0os8rjdr66" path="res://assets/truck_interior/order_walkup_firsthalf_6.png" id="7_lp8r3"]
+[ext_resource type="Texture2D" uid="uid://bm6e5di3s5jma" path="res://assets/truck_interior/truck_interior.png" id="8_uf7eh"]
 [ext_resource type="PackedScene" uid="uid://b7gswtspo7oa4" path="res://WalkPause.tscn" id="9_8c8p5"]
-[ext_resource type="FontFile" uid="uid://1rn8mmdkkrmj" path="res://assets/fonts/icecream_analog.ttf" id="10_byept"]
-[ext_resource type="FontFile" uid="uid://ie8mvobpepsw" path="res://assets/fonts/KarenFat.ttf" id="11_djkbk"]
+[ext_resource type="FontFile" uid="uid://n78tfei6b8fj" path="res://assets/fonts/icecream_analog.ttf" id="10_byept"]
+[ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="11_djkbk"]
 [ext_resource type="Script" path="res://score_label.gd" id="12_2e2fe"]
 [ext_resource type="PackedScene" uid="uid://d3wphvmf0fykx" path="res://number_snowflakes.tscn" id="13_w2te4"]
 [ext_resource type="PackedScene" uid="uid://c80uv33pm8qys" path="res://tower.tscn" id="14_gmms0"]
 [ext_resource type="PackedScene" uid="uid://cj3urrn8xrb70" path="res://target.tscn" id="15_gdfsq"]
-[ext_resource type="Texture2D" uid="uid://1my10olw11of" path="res://assets/icecream/cone.png" id="16_cwrmj"]
+[ext_resource type="Texture2D" uid="uid://csaxh302v7u25" path="res://assets/icecream/cone.png" id="16_cwrmj"]
 [ext_resource type="PackedScene" uid="uid://fq3a7ac4jr00" path="res://scoop.tscn" id="17_ccjbw"]
 [ext_resource type="PackedScene" uid="uid://dlc02e3aojldh" path="res://dropper.tscn" id="18_vmu3t"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_dt5gt"]
-specular_color = Color(0.172549, 0.909804, 0.960784, 1)
+[ext_resource type="Texture2D" uid="uid://cdcvcta2okaot" path="res://assets/cutscene/trees.png" id="19_70805"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rshw3"]
 animations = [{
@@ -51,13 +49,6 @@ animations = [{
 [node name="Main" type="Node2D" node_paths=PackedStringArray("target")]
 script = ExtResource("1_g1irq")
 target = NodePath("Tower/Target")
-
-[node name="Background" type="TextureRect" parent="."]
-modulate = Color(0.172549, 0.909804, 0.960784, 1)
-offset_top = -14.0
-offset_right = 320.0
-offset_bottom = 180.0
-texture = SubResource("CanvasTexture_dt5gt")
 
 [node name="WalkStart" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -126,3 +117,8 @@ position = Vector2(165, 72)
 
 [node name="Target" parent="Tower" instance=ExtResource("15_gdfsq")]
 position = Vector2(-4.6136, 16.2043)
+
+[node name="BrokenTruck" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(180, 75)
+texture = ExtResource("19_70805")
