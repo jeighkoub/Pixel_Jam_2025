@@ -25,21 +25,17 @@ func _ready() -> void:
 		$WalkPause/Sprite.visible = false
 	else:
 		push_error("WalkPause/Sprite node not found!")
-	
-	
+
+
 
 func _on_hit_target():
 	if not main_scoop.visible:
 		print("skipping _on_hit_target")
 		return
-	print("hit")
 	main_scoop.visible = false
 	main_scoop.velocity = Vector2.ZERO
-	print(main_scoop.global_position)
 	main_scoop.set_physics_process(false)
 	main_scoop.global_position = Vector2(-100,0) # move away from collision detection
-	print("moved away")
-	print(main_scoop.global_position)
 
 	#plop particles
 	
