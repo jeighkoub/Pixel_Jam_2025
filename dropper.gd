@@ -19,7 +19,6 @@ func create_scoop(color: String) -> void:
 		"red", "r":
 			scoop.get_node("Sprite2D").texture = red
 	scoop.visible = true
-	
 
 func drop():
 	scoop.velocity = Vector2(0,100)

@@ -11,17 +11,31 @@ extends Node2D
 var is_order_active: bool = false
 
 func _ready() -> void:
+	
+	#connections
+	#target.hit_target.connect(_on_hit_target)
+	var err = target.hit_target.connect(_on_hit_target)
+	if err != OK:
+		push_error("Signal connection failed: ", err)
+	
 	# Hide WalkPause sprite (access Sprite2D inside WalkPause scene)
 	if has_node("WalkPause/Sprite"):
 		$WalkPause/Sprite.visible = false
 	else:
 		push_error("WalkPause/Sprite node not found!")
 	
-	#connections
-	target.hit_target.connect(_on_hit_target)
+	
 
 func _on_hit_target():
-	pass
+	main_scoop.visible = false
+	main_scoop.velocity = Vector2.ZERO
+	main_scoop.global_position += Vector2(0,-200) # move away from collision detection
+	
+	#plop particles
+	
+	#score
+	
+	#wait and reload dropper
 	
 
 func _process(delta: float) -> void:
