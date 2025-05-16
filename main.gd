@@ -5,6 +5,7 @@ extends Node2D
 @export var particle_component: Node2D
 @export var target: Target
 @export var dropper: Node2D
+@export var main_scoop: Scoop #reuse the same scoop to aovid rewiring
 
 # State to prevent repeated triggers
 var is_order_active: bool = false
