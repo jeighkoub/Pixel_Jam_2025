@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://cb4bp5deiwpic"]
+[gd_scene load_steps=12 format=4 uid="uid://cb4bp5deiwpic"]
 
 [ext_resource type="Script" path="res://quarterly_report.gd" id="1_nl2lk"]
 [ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="2_riaaw"]
 [ext_resource type="Script" path="res://blink_label.gd" id="3_u77cn"]
+[ext_resource type="AudioStream" uid="uid://cra06nkd31rwc" path="res://sfx/score_noise.wav" id="4_yr5dn"]
+[ext_resource type="AudioStream" uid="uid://dkp6smxrhyhpf" path="res://sfx/select.wav" id="5_1o2w2"]
 
 [sub_resource type="Image" id="Image_fxpix"]
 data = {
@@ -570,3 +572,9 @@ layout_mode = 0
 offset_right = 342.0
 offset_bottom = 235.0
 texture = SubResource("CanvasTexture_x2k5p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yr5dn")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1o2w2")

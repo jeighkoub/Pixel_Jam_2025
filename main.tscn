@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cfa1pp2khtna8"]
+[gd_scene load_steps=26 format=3 uid="uid://cfa1pp2khtna8"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_g1irq"]
 [ext_resource type="Texture2D" uid="uid://byo6w3xen843v" path="res://assets/truck_interior/order_walkup_firsthalf_1.png" id="2_6eull"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dlc02e3aojldh" path="res://dropper.tscn" id="18_vmu3t"]
 [ext_resource type="Texture2D" uid="uid://cdcvcta2okaot" path="res://assets/cutscene/trees.png" id="19_70805"]
 [ext_resource type="Texture2D" uid="uid://bjh2ej0jbyywh" path="res://assets/truck_interior/arm.png" id="20_rxn4a"]
+[ext_resource type="AudioStream" uid="uid://cut1hopy6njie" path="res://sfx/plop.wav" id="21_m1n0f"]
 [ext_resource type="AudioStream" uid="uid://bwwbfi32m10kk" path="res://assets/music/Hurt_and_heart.ogg" id="21_stefu"]
 [ext_resource type="AudioStream" uid="uid://b01smpxye7tei" path="res://assets/music/joyful.ogg" id="22_v2x15"]
 [ext_resource type="AudioStream" uid="uid://drssbol2h0ym5" path="res://assets/music/Maniac.ogg" id="23_r8jn0"]
@@ -136,6 +137,10 @@ texture = ExtResource("20_rxn4a")
 z_index = -1
 position = Vector2(180, 75)
 texture = ExtResource("19_70805")
+
+[node name="Plop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_m1n0f")
+volume_db = 10.0
 
 [node name="Music3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_stefu")

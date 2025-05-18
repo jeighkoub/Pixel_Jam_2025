@@ -17,7 +17,9 @@ var is_order_active: bool = false
 @onready var music3: AudioStreamPlayer = $Music3
 
 func _ready() -> void:
-	var random_number = randi_range(1, 3)
+	var rng = RandomNumberGenerator.new()
+	rng.randomize() 
+	var random_number = rng.randi_range(1, 3)  
 	match random_number:
 		1:
 			music1.play()
@@ -50,7 +52,7 @@ func _on_hit_target():
 	var target_position = main_scoop.global_position
 	#plop particles
 	#TODO  Add color checker
-
+	$Plop.play()
 	#put scoop on tower
 	var scoops_arr: Array = tower.scoops
 	var new_scoop: Scoop = scoop_scene.instantiate()

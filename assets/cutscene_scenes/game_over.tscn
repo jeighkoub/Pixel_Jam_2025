@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://4kvibjmvkh4b"]
+[gd_scene load_steps=11 format=4 uid="uid://4kvibjmvkh4b"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_u2os4"]
 [ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="2_3fhvm"]
 [ext_resource type="Script" path="res://blink_label.gd" id="3_c3u3u"]
+[ext_resource type="AudioStream" uid="uid://cra06nkd31rwc" path="res://sfx/score_noise.wav" id="4_1hjpp"]
+[ext_resource type="AudioStream" uid="uid://dkp6smxrhyhpf" path="res://sfx/select.wav" id="4_2bq7f"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_udmeg"]
 specular_color = Color(0, 0, 0, 1)
@@ -312,3 +314,9 @@ theme_override_fonts/font = ExtResource("2_3fhvm")
 text = "Press Space To Continue"
 script = ExtResource("3_c3u3u")
 color_one = Color(0.172549, 0.909804, 0.960784, 1)
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2bq7f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1hjpp")
