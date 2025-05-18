@@ -11,9 +11,20 @@ extends Node2D
 # State to prevent repeated triggers
 var is_order_active: bool = false
 
+# SO WE CAN CYCLE THROUGH RANDOM TRACKS
+@onready var music1: AudioStreamPlayer = $Music1
+@onready var music2: AudioStreamPlayer = $Music2
+@onready var music3: AudioStreamPlayer = $Music3
 
 func _ready() -> void:
-	
+	var random_number = randi_range(1, 3)
+	match random_number:
+		1:
+			music1.play()
+		2:
+			music2.play()
+		3:
+			music3.play()
 	#connections
 	#target.hit_target.connect(_on_hit_target)
 	var err = target.hit_target.connect(_on_hit_target)

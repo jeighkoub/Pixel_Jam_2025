@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpq1li8m4323w"]
+
+[ext_resource type="Script" path="res://middle_cutscene.gd" id="1_ji8ik"]
+[ext_resource type="Texture2D" uid="uid://cd2q8kbbm0qco" path="res://assets/cutscene/broken_truck.png" id="2_cbhvl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c177a"]
+specular_color = Color(0, 0, 0, 1)
+
+[node name="NoProgress" type="Node2D"]
+script = ExtResource("1_ji8ik")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 90)
+texture = ExtResource("2_cbhvl")
+
+[node name="TextureRect" type="TextureRect" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -320.0
+offset_top = 90.0
+offset_right = 323.0
+offset_bottom = 247.0
+texture = SubResource("CanvasTexture_c177a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 3
+offset_left = -8.0
+offset_top = -6.0
+offset_right = 335.0
+offset_bottom = 221.0
+color = Color(0, 0, 0, 1)

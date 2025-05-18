@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwwv2khiw752a"]
+[gd_scene load_steps=4 format=3 uid="uid://qns5hnglv0yf"]
 
-[ext_resource type="Script" path="res://middle_cutscene.gd" id="1_me0ej"]
-[ext_resource type="Texture2D" uid="uid://br5msdq2xgnhp" path="res://assets/cutscene/truck.png" id="2_83jiv"]
+[ext_resource type="Script" path="res://end_cutscene.gd" id="1_lftea"]
+[ext_resource type="Texture2D" uid="uid://btptvpp4eusw5" path="res://assets/cutscene/lifted_truck.png" id="2_ngp8f"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c177a"]
 specular_color = Color(0, 0, 0, 1)
 
-[node name="MiddleCutscene" type="Node2D"]
-script = ExtResource("1_me0ej")
+[node name="EndCutscene" type="Node2D"]
+script = ExtResource("1_lftea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(160, 90)
-texture = ExtResource("2_83jiv")
+texture = ExtResource("2_ngp8f")
 
 [node name="TextureRect" type="TextureRect" parent="Sprite2D"]
 modulate = Color(0, 0, 0, 1)

@@ -98,7 +98,7 @@ script = ExtResource("1_ejldy")
 
 [node name="BackSide" type="GPUParticles2D" parent="."]
 z_index = -1
-position = Vector2(0, 5)
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_l82hy")
@@ -109,7 +109,7 @@ explosiveness = 1.0
 
 [node name="FrontSideLeft" type="GPUParticles2D" parent="."]
 z_index = 3
-position = Vector2(0, 5)
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_nd5ue")
@@ -120,7 +120,7 @@ explosiveness = 1.0
 
 [node name="FrontSideRight" type="GPUParticles2D" parent="."]
 z_index = 3
-position = Vector2(0, 5)
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_2cdei")
