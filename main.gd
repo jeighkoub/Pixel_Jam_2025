@@ -17,9 +17,7 @@ var is_order_active: bool = false
 @onready var music3: AudioStreamPlayer = $Music3
 
 func _ready() -> void:
-	var rng = RandomNumberGenerator.new()
-	rng.randomize() 
-	var random_number = rng.randi_range(1, 3)  
+	var random_number = GlobalAudio.rng.randi_range(1, 3)
 	match random_number:
 		1:
 			music1.play()
