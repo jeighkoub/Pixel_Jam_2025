@@ -64,11 +64,6 @@ visible = false
 position = Vector2(160, 99)
 sprite_frames = SubResource("SpriteFrames_rshw3")
 
-[node name="TruckInterior" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(160, 0)
-texture = ExtResource("8_ggke1")
-
 [node name="WalkPause" parent="." instance=ExtResource("9_8c8p5")]
 visible = false
 
@@ -113,17 +108,6 @@ position = Vector2(252, 48)
 [node name="Scoop" parent="." instance=ExtResource("17_ccjbw")]
 position = Vector2(167, 10)
 
-[node name="Dropper" parent="." node_paths=PackedStringArray("scoop") instance=ExtResource("18_vmu3t")]
-position = Vector2(167, 15)
-scoop = NodePath("../Scoop")
-
-[node name="Tower" parent="." instance=ExtResource("14_gmms0")]
-position = Vector2(165, 72)
-
-[node name="Target" parent="Tower" node_paths=PackedStringArray("falling_scoop") instance=ExtResource("15_gdfsq")]
-position = Vector2(-4.6136, 16.2043)
-falling_scoop = NodePath("../../Scoop")
-
 [node name="Cone" type="Sprite2D" parent="."]
 position = Vector2(165, 81)
 texture = ExtResource("16_cwrmj")
@@ -153,3 +137,20 @@ stream = ExtResource("23_r8jn0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 53)
+
+[node name="Dropper" parent="." node_paths=PackedStringArray("scoop") instance=ExtResource("18_vmu3t")]
+position = Vector2(167, 15)
+scoop = NodePath("../Scoop")
+
+[node name="Tower" parent="." instance=ExtResource("14_gmms0")]
+position = Vector2(165, 72)
+
+[node name="Target" parent="Tower" node_paths=PackedStringArray("falling_scoop") instance=ExtResource("15_gdfsq")]
+position = Vector2(-4.6136, 16.2043)
+falling_scoop = NodePath("../../Scoop")
+
+[node name="TruckInterior" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(160, 0)
+texture = ExtResource("8_ggke1")

@@ -11,6 +11,9 @@ extends Node2D
 # State to prevent repeated triggers
 var is_order_active: bool = false
 
+var num_scoops_successful: int
+var num_scoops_goal: int
+
 # SO WE CAN CYCLE THROUGH RANDOM TRACKS
 @onready var music1: AudioStreamPlayer = $Music1
 @onready var music2: AudioStreamPlayer = $Music2
@@ -36,6 +39,7 @@ func _ready() -> void:
 		$WalkPause/Sprite.visible = false
 	else:
 		push_error("WalkPause/Sprite node not found!")
+	
 
 
 
@@ -48,9 +52,11 @@ func _on_hit_target():
 	main_scoop.set_physics_process(false)
 	main_scoop.global_position = Vector2(-100,0) # move away from collision detection
 	var target_position = main_scoop.global_position
+	
 	#plop particles
 	#TODO  Add color checker
-	$Plop.play()
+	$Plop.play() #sound?
+	
 	#put scoop on tower
 	var scoops_arr: Array = tower.scoops
 	var new_scoop: Scoop = scoop_scene.instantiate()
@@ -60,10 +66,14 @@ func _on_hit_target():
 	
 	
 	#score
-	#TODO
+	var score_node = $Score
+	score_node.points += 100
 	
 	#move dropper and camera up
-	#TODO
+	$Dropper.global_position += Vector2(0,-16) #diameter of scoop is 16
+	var target_pos = $Camera2D.global_position + Vector2(0, -16)
+	var tween := get_tree().create_tween()
+	tween.tween_property($Camera2D, "global_position", target_pos, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
 	#wait and reload dropper
 	dropper.create_scoop("blue")
@@ -75,6 +85,7 @@ func _process(delta: float) -> void:
 	# Trigger customer order on spacebar (replace with your event)
 	if Input.is_action_just_pressed("ui_accept") and not is_order_active:
 		customer_order()
+	print("tower: ", tower.z_index, "\ninterior: ", $TruckInterior.z_index)
 
 func customer_order() -> void:
 	# Prevent re-triggering
