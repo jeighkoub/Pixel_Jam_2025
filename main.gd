@@ -11,8 +11,11 @@ extends Node2D
 # State to prevent repeated triggers
 var is_order_active: bool = false
 
+var scoop_colors: Array
+var next_color: String = "Green"
 var num_scoops_successful: int
 var num_scoops_goal: int
+
 
 # SO WE CAN CYCLE THROUGH RANDOM TRACKS
 @onready var music1: AudioStreamPlayer = $Music1
@@ -28,11 +31,13 @@ func _ready() -> void:
 			music2.play()
 		3:
 			music3.play()
+
 	#connections
 	#target.hit_target.connect(_on_hit_target)
 	var err = target.hit_target.connect(_on_hit_target)
 	if err != OK:
 		push_error("Signal connection failed: ", err)
+	main_scoop.scoop_missed.connect(_on_scoop_missed)
 	
 	# Hide WalkPause sprite (access Sprite2D inside WalkPause scene)
 	if has_node("WalkPause/Sprite"):
@@ -76,7 +81,7 @@ func _on_hit_target():
 	tween.tween_property($Camera2D, "global_position", target_pos, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
 	#wait and reload dropper
-	dropper.create_scoop("blue")
+	dropper.create_scoop(next_color)
 	
 	
 	
@@ -85,7 +90,7 @@ func _process(delta: float) -> void:
 	# Trigger customer order on spacebar (replace with your event)
 	if Input.is_action_just_pressed("ui_accept") and not is_order_active:
 		customer_order()
-	print("tower: ", tower.z_index, "\ninterior: ", $TruckInterior.z_index)
+	#print("tower: ", tower.z_index, "\ninterior: ", $TruckInterior.z_index)
 
 func customer_order() -> void:
 	# Prevent re-triggering
@@ -113,3 +118,8 @@ func customer_order() -> void:
 	is_order_active = false
 	if has_node("WalkPause/Sprite"):
 		$WalkPause.visible = false
+	
+func _on_scoop_missed() -> void:
+	print("scoop missed")
+	dropper.create_scoop(next_color) #TEMP TEST
+	pass #TODO end the scoop drop and go to next customer or end of day

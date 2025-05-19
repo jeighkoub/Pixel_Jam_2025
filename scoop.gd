@@ -4,6 +4,8 @@ class_name Scoop
 var velocity: Vector2 = Vector2.ZERO
 var _particles_played: bool = false  
 
+signal scoop_missed
+
 func setup(txtr: Resource) -> void:
 	var sprite := get_node_or_null("Sprite2D")
 	if sprite and sprite is Sprite2D:
@@ -34,7 +36,6 @@ func _physics_process(delta: float) -> void:
 					child.emitting = true
 			_particles_played = true  
 	else:
-
 		_particles_played = false
 
 func trigger_particles() -> void:
@@ -43,3 +44,9 @@ func trigger_particles() -> void:
 			child.global_position = global_position
 			child.restart()
 			child.emitting = true
+
+
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	emit_signal("scoop_missed")
