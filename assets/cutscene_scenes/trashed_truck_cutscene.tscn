@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpq1li8m4323w"]
 
 [ext_resource type="Script" path="res://middle_cutscene.gd" id="1_ji8ik"]
-[ext_resource type="Texture2D" uid="uid://cd2q8kbbm0qco" path="res://assets/cutscene/broken_truck.png" id="2_cbhvl"]
+[ext_resource type="Texture2D" uid="uid://6olicwbq3caq" path="res://assets/cutscene/broken_truck.png" id="2_cbhvl"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c177a"]
 specular_color = Color(0, 0, 0, 1)
