@@ -1,31 +1,31 @@
 [gd_scene load_steps=28 format=3 uid="uid://cfa1pp2khtna8"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_g1irq"]
-[ext_resource type="Texture2D" uid="uid://d3feptx88eswe" path="res://assets/truck_interior/order_walkup_firsthalf_1.png" id="2_6eull"]
-[ext_resource type="Texture2D" uid="uid://ddpeow8ctmnhx" path="res://assets/truck_interior/order_walkup_firsthalf_2.png" id="3_40duv"]
+[ext_resource type="Texture2D" uid="uid://tphgtpnni5ca" path="res://assets/truck_interior/order_walkup_firsthalf_1.png" id="2_6eull"]
+[ext_resource type="Texture2D" uid="uid://c12uyg30xokp0" path="res://assets/truck_interior/order_walkup_firsthalf_2.png" id="3_40duv"]
 [ext_resource type="PackedScene" uid="uid://cb4bp5deiwpic" path="res://assets/cutscene_scenes/quarterly_report.tscn" id="3_hv65v"]
 [ext_resource type="PackedScene" uid="uid://4kvibjmvkh4b" path="res://assets/cutscene_scenes/game_over.tscn" id="4_3v3a8"]
-[ext_resource type="Texture2D" uid="uid://d3voh8lir4smx" path="res://assets/truck_interior/order_walkup_firsthalf_3.png" id="4_lfkhs"]
-[ext_resource type="Texture2D" uid="uid://ce7kfkyhix3gn" path="res://assets/truck_interior/order_walkup_firsthalf_4.png" id="5_iwvww"]
-[ext_resource type="Texture2D" uid="uid://djnk7p54ioj12" path="res://assets/truck_interior/order_walkup_firsthalf_5.png" id="6_fcjci"]
-[ext_resource type="Texture2D" uid="uid://vw5ma4p7ju2b" path="res://assets/truck_interior/order_walkup_firsthalf_6.png" id="7_lp8r3"]
-[ext_resource type="Texture2D" uid="uid://b7dkbg212hmq7" path="res://assets/truck_interior/truck_interior_v2.png" id="8_ggke1"]
+[ext_resource type="Texture2D" uid="uid://c3itwtwp7few5" path="res://assets/truck_interior/order_walkup_firsthalf_3.png" id="4_lfkhs"]
+[ext_resource type="Texture2D" uid="uid://dhe6auqb4jvfp" path="res://assets/truck_interior/order_walkup_firsthalf_4.png" id="5_iwvww"]
+[ext_resource type="Texture2D" uid="uid://dhhm4nj6ud6l7" path="res://assets/truck_interior/order_walkup_firsthalf_5.png" id="6_fcjci"]
+[ext_resource type="Texture2D" uid="uid://b6bwfiwehgvtr" path="res://assets/truck_interior/order_walkup_firsthalf_6.png" id="7_lp8r3"]
+[ext_resource type="Texture2D" uid="uid://dv8vu5u6trtw4" path="res://assets/truck_interior/truck_interior_v2.png" id="8_ggke1"]
 [ext_resource type="PackedScene" uid="uid://b7gswtspo7oa4" path="res://WalkPause.tscn" id="9_8c8p5"]
-[ext_resource type="FontFile" uid="uid://1rn8mmdkkrmj" path="res://assets/fonts/icecream_analog.ttf" id="10_byept"]
-[ext_resource type="FontFile" uid="uid://ie8mvobpepsw" path="res://assets/fonts/KarenFat.ttf" id="11_djkbk"]
+[ext_resource type="FontFile" uid="uid://bm06py8lwms81" path="res://assets/fonts/icecream_analog.ttf" id="10_byept"]
+[ext_resource type="FontFile" uid="uid://cbr5ml6w3b3ji" path="res://assets/fonts/KarenFat.ttf" id="11_djkbk"]
 [ext_resource type="Script" path="res://score_label.gd" id="12_2e2fe"]
 [ext_resource type="PackedScene" uid="uid://d3wphvmf0fykx" path="res://number_snowflakes.tscn" id="13_w2te4"]
 [ext_resource type="PackedScene" uid="uid://c80uv33pm8qys" path="res://tower.tscn" id="14_gmms0"]
 [ext_resource type="PackedScene" uid="uid://cj3urrn8xrb70" path="res://target.tscn" id="15_gdfsq"]
-[ext_resource type="Texture2D" uid="uid://1my10olw11of" path="res://assets/icecream/cone.png" id="16_cwrmj"]
+[ext_resource type="Texture2D" uid="uid://btkncpbyjnqcg" path="res://assets/icecream/cone.png" id="16_cwrmj"]
 [ext_resource type="PackedScene" uid="uid://fq3a7ac4jr00" path="res://scoop.tscn" id="17_ccjbw"]
 [ext_resource type="PackedScene" uid="uid://dlc02e3aojldh" path="res://dropper.tscn" id="18_vmu3t"]
-[ext_resource type="Texture2D" uid="uid://dinis6q3gmlf6" path="res://assets/cutscene/trees.png" id="19_70805"]
-[ext_resource type="Texture2D" uid="uid://doxatnpbwawyu" path="res://assets/truck_interior/arm.png" id="20_rxn4a"]
-[ext_resource type="AudioStream" uid="uid://dql0e6hxgcy0t" path="res://sfx/plop.wav" id="21_m1n0f"]
-[ext_resource type="AudioStream" uid="uid://c2f6gfvdocxb6" path="res://assets/music/Hurt_and_heart.ogg" id="21_stefu"]
-[ext_resource type="AudioStream" uid="uid://lo3ysa2rb5ru" path="res://assets/music/joyful.ogg" id="22_v2x15"]
-[ext_resource type="AudioStream" uid="uid://c0umhavo4otn3" path="res://assets/music/Maniac.ogg" id="23_r8jn0"]
+[ext_resource type="Texture2D" uid="uid://c7n5k0bigp16y" path="res://assets/cutscene/trees.png" id="19_70805"]
+[ext_resource type="Texture2D" uid="uid://deie2bcbilvlx" path="res://assets/truck_interior/arm.png" id="20_rxn4a"]
+[ext_resource type="AudioStream" uid="uid://nv68g5mob4hk" path="res://sfx/plop.wav" id="21_m1n0f"]
+[ext_resource type="AudioStream" uid="uid://koqv5f41vbiu" path="res://assets/music/Hurt_and_heart.ogg" id="21_stefu"]
+[ext_resource type="AudioStream" uid="uid://dglduo2nv01gv" path="res://assets/music/joyful.ogg" id="22_v2x15"]
+[ext_resource type="AudioStream" uid="uid://ca7arldp8i7w1" path="res://assets/music/Maniac.ogg" id="23_r8jn0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rshw3"]
 animations = [{
@@ -167,6 +167,6 @@ falling_scoop = NodePath("../../Scoop")
 
 [node name="TruckInterior" type="Sprite2D" parent="."]
 visible = false
-z_index = 1
+z_index = -1
 position = Vector2(160, 0)
 texture = ExtResource("8_ggke1")
