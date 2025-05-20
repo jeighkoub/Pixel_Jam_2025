@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=4 uid="uid://cb4bp5deiwpic"]
 
 [ext_resource type="Script" path="res://quarterly_report.gd" id="1_nl2lk"]
-[ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="2_riaaw"]
+[ext_resource type="FontFile" uid="uid://ie8mvobpepsw" path="res://assets/fonts/KarenFat.ttf" id="2_riaaw"]
 [ext_resource type="Script" path="res://blink_label.gd" id="3_u77cn"]
-[ext_resource type="AudioStream" uid="uid://cra06nkd31rwc" path="res://sfx/score_noise.wav" id="4_yr5dn"]
-[ext_resource type="AudioStream" uid="uid://dkp6smxrhyhpf" path="res://sfx/select.wav" id="5_1o2w2"]
+[ext_resource type="AudioStream" uid="uid://dtiw5b2htj5mu" path="res://sfx/score_noise.wav" id="4_yr5dn"]
+[ext_resource type="AudioStream" uid="uid://bc7eft740nvcl" path="res://sfx/select.wav" id="5_1o2w2"]
 
 [sub_resource type="Image" id="Image_fxpix"]
 data = {
