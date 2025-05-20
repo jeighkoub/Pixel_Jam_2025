@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=4 uid="uid://4kvibjmvkh4b"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_u2os4"]
-[ext_resource type="FontFile" uid="uid://ie8mvobpepsw" path="res://assets/fonts/KarenFat.ttf" id="2_3fhvm"]
+[ext_resource type="FontFile" uid="uid://cbr5ml6w3b3ji" path="res://assets/fonts/KarenFat.ttf" id="2_3fhvm"]
 [ext_resource type="Script" path="res://blink_label.gd" id="3_c3u3u"]
-[ext_resource type="AudioStream" uid="uid://dtiw5b2htj5mu" path="res://sfx/score_noise.wav" id="4_1hjpp"]
-[ext_resource type="AudioStream" uid="uid://bc7eft740nvcl" path="res://sfx/select.wav" id="4_2bq7f"]
+[ext_resource type="AudioStream" uid="uid://dp4dkv0i3wr60" path="res://sfx/score_noise.wav" id="4_1hjpp"]
+[ext_resource type="AudioStream" uid="uid://cystsc0f2sabw" path="res://sfx/select.wav" id="4_2bq7f"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_udmeg"]
 specular_color = Color(0, 0, 0, 1)
@@ -41,7 +41,9 @@ data = PackedByteArray("AAEAAAAOAIAAAwBgRkZUTV+iLOMAAC44AAAAHEdERUYADwAeAAAuGAAA
 font_name = "KarenFat"
 style_name = "Medium"
 font_weight = 500
+subpixel_positioning = 0
 msdf_pixel_range = 8
+msdf_size = 128
 cache/0/16/0/ascent = 12.0
 cache/0/16/0/descent = 4.0
 cache/0/16/0/underline_position = 2.39063

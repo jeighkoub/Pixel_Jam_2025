@@ -28,7 +28,7 @@ func start_cutscene():
 
 		#get_tree().change_scene_to_file("res://assets/cutscene_scenes/game_over.tscn") #TODO end of game. move to main menu?
 		var scn = load("res://assets/cutscene_scenes/game_over.tscn").instantiate()
-		scn.profit = 1 << 63
+		#scn.profit = 1 << 63
 		get_tree().current_scene.queue_free()
 		get_tree().root.add_child(scn)
 		get_tree().current_scene = scn

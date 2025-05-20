@@ -5,7 +5,7 @@ signal hit_target()
 @export var falling_scoop: Scoop
 
 var previous_color: String = "Red"  
-var current_color: String = "" 
+var current_color: String = "Red" 
 
 var first_drop: bool = true 
 
@@ -43,10 +43,19 @@ func _store_current_color(color: String) -> void:
 func _play_particles(color: String) -> void:
 	var all_colors = ["Red", "Green", "Blue"]
 	for c in all_colors:
-		var group_name = c + "Particles"  
-		var nodes = get_tree().get_nodes_in_group(group_name)  
+		var group_name = c + "Particles"
+		var nodes = get_tree().get_nodes_in_group(group_name)
 		for node in nodes:
 			if node is GPUParticles2D:
-				node.emitting = (c == color) 
+				# Check if original_position is stored; if not, store it
+				if not node.has_meta("original_position"):
+					node.set_meta("original_position", node.position)
+				
+		
+				node.position = node.get_meta("original_position")
+				
+			
+				node.emitting = (c == color)
 				if node.emitting:
+					node.position += Vector2(0, 15)  
 					node.restart()

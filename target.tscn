@@ -259,8 +259,9 @@ script = ExtResource("1_nhrxb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_gxqew")
 
-[node name="FrontSideLeftBlue" type="GPUParticles2D" parent="." groups=["BlueParticles"]]
+[node name="FrontSideLeftBlue" type="GPUParticles2D" parent="Area2D/CollisionShape2D" groups=["BlueParticles"]]
 z_index = 3
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_o5j7h")
@@ -269,8 +270,9 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 
-[node name="FrontSideRightBlue" type="GPUParticles2D" parent="." groups=["BlueParticles"]]
+[node name="FrontSideRightBlue" type="GPUParticles2D" parent="Area2D/CollisionShape2D" groups=["BlueParticles"]]
 z_index = 3
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_xissa")
@@ -279,8 +281,9 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 
-[node name="BackSideBlue" type="GPUParticles2D" parent="." groups=["BlueParticles"]]
+[node name="BackSideBlue" type="GPUParticles2D" parent="Area2D/CollisionShape2D" groups=["BlueParticles"]]
 z_index = 1
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_ep7qv")
@@ -289,8 +292,9 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 
-[node name="FrontSideLeftGreen" type="GPUParticles2D" parent="." groups=["GreenParticles"]]
+[node name="FrontSideLeftGreen" type="GPUParticles2D" parent="Area2D/CollisionShape2D" groups=["GreenParticles"]]
 z_index = 3
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_xg3wm")
@@ -299,8 +303,9 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 
-[node name="FrontSideRightGreen" type="GPUParticles2D" parent="." groups=["GreenParticles"]]
+[node name="FrontSideRightGreen" type="GPUParticles2D" parent="Area2D/CollisionShape2D" groups=["GreenParticles"]]
 z_index = 3
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_dwiyo")
@@ -309,8 +314,9 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 
-[node name="BackSideGreen" type="GPUParticles2D" parent="." groups=["GreenParticles"]]
+[node name="BackSideGreen" type="GPUParticles2D" parent="Area2D/CollisionShape2D" groups=["GreenParticles"]]
 z_index = 1
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_smuqh")
@@ -319,8 +325,9 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 
-[node name="BackSideRed" type="GPUParticles2D" parent="." groups=["RedParticles"]]
+[node name="BackSideRed" type="GPUParticles2D" parent="Area2D/CollisionShape2D" groups=["RedParticles"]]
 z_index = -1
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_6chgp")
@@ -328,8 +335,9 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 
-[node name="FrontSideLeftRed" type="GPUParticles2D" parent="." groups=["RedParticles"]]
+[node name="FrontSideLeftRed" type="GPUParticles2D" parent="Area2D/CollisionShape2D" groups=["RedParticles"]]
 z_index = 3
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_2mgkv")
@@ -338,8 +346,9 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 
-[node name="FrontSideRightRed" type="GPUParticles2D" parent="." groups=["RedParticles"]]
+[node name="FrontSideRightRed" type="GPUParticles2D" parent="Area2D/CollisionShape2D" groups=["RedParticles"]]
 z_index = 3
+position = Vector2(0, 7)
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_hplun")
