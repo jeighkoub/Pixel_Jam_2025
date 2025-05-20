@@ -1,6 +1,9 @@
 extends Control
 func _ready() -> void:
 	$AudioStreamPlayer.play()
+
+func setup() -> void:
+	pass
 	
 func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("ui_accept"):

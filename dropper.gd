@@ -10,16 +10,21 @@ func _ready():
 	create_scoop("red")
 
 func create_scoop(color: String) -> void:
+	print("creating    ", color)
 	scoop.set_physics_process(false)
 	scoop.global_position = self.global_position
 	scoop.velocity = Vector2.ZERO
 	match color:
 		"blue", "b":
 			scoop.get_node("Sprite2D").texture = blue
-		"green", "g":
-			scoop.get_node("Sprite2D").texture = green
+			print("blue")
 		"red", "r":
 			scoop.get_node("Sprite2D").texture = red
+			print("red")
+		"green", "g":
+			scoop.get_node("Sprite2D").texture = green
+			print("green")
+
 	scoop.visible = true
 
 func drop():

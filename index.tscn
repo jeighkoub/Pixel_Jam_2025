@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=4 uid="uid://e51wnm27komb"]
 
 [ext_resource type="Script" path="res://index.gd" id="1_cpq2g"]
-[ext_resource type="Texture2D" uid="uid://cd2q8kbbm0qco" path="res://assets/cutscene/broken_truck.png" id="1_r1opc"]
-[ext_resource type="FontFile" uid="uid://f1ol3y0i7u3p" path="res://assets/fonts/KarenFat.ttf" id="2_q5j08"]
+[ext_resource type="Texture2D" uid="uid://6olicwbq3caq" path="res://assets/cutscene/broken_truck.png" id="1_r1opc"]
+[ext_resource type="FontFile" uid="uid://ie8mvobpepsw" path="res://assets/fonts/KarenFat.ttf" id="2_q5j08"]
 [ext_resource type="Script" path="res://blink_label.gd" id="3_qleu5"]
-[ext_resource type="FontFile" uid="uid://dpaybyqvprvta" path="res://assets/fonts/Mystery Font(1).ttf" id="5_px3ml"]
-[ext_resource type="AudioStream" uid="uid://dkp6smxrhyhpf" path="res://sfx/select.wav" id="6_q4ico"]
+[ext_resource type="FontFile" uid="uid://dfcucna2hp6wf" path="res://assets/fonts/Mystery Font(1).ttf" id="5_px3ml"]
+[ext_resource type="AudioStream" uid="uid://bc7eft740nvcl" path="res://sfx/select.wav" id="6_q4ico"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_yvqun"]
 diffuse_texture = ExtResource("1_r1opc")

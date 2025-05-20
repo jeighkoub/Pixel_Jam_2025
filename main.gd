@@ -11,8 +11,16 @@ extends Node2D
 # State to prevent repeated triggers
 var is_order_active: bool = false
 
+@export var success_scene: PackedScene
+@export var fail_scene: PackedScene
+
+
+
 var scoop_colors: Array
-var next_color: String = "Green"
+func next_color() -> String:
+	var colors = ["green", "red", "blue"]
+	return colors[randi() % colors.size()]
+
 var num_scoops_successful: int
 var num_scoops_goal: int
 
@@ -36,14 +44,17 @@ func _ready() -> void:
 	#target.hit_target.connect(_on_hit_target)
 	var err = target.hit_target.connect(_on_hit_target)
 	if err != OK:
+		print("signal err")
 		push_error("Signal connection failed: ", err)
 	main_scoop.scoop_missed.connect(_on_scoop_missed)
 	
 	# Hide WalkPause sprite (access Sprite2D inside WalkPause scene)
-	if has_node("WalkPause/Sprite"):
+	if self.has_node("WalkPause/Sprite"):
 		$WalkPause/Sprite.visible = false
 	else:
+		print("no walkpause")
 		push_error("WalkPause/Sprite node not found!")
+
 	
 
 
@@ -58,6 +69,7 @@ func _on_hit_target():
 	main_scoop.global_position = Vector2(-100,0) # move away from collision detection
 	var target_position = main_scoop.global_position
 	
+	
 	#plop particles
 	#TODO  Add color checker
 	$Plop.play() #sound?
@@ -71,8 +83,9 @@ func _on_hit_target():
 	
 	
 	#score
-	var score_node = $Score
-	score_node.points += 100
+	num_scoops_successful += 1
+	var score_node = %Score
+	score_node.points += 100 * num_scoops_successful
 	
 	#move dropper and camera up
 	$Dropper.global_position += Vector2(0,-16) #diameter of scoop is 16
@@ -81,12 +94,11 @@ func _on_hit_target():
 	tween.tween_property($Camera2D, "global_position", target_pos, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
 	#wait and reload dropper
-	dropper.create_scoop(next_color)
-	
-	
-	
+	dropper.create_scoop(next_color())
+
 
 func _process(delta: float) -> void:
+	
 	# Trigger customer order on spacebar (replace with your event)
 	if Input.is_action_just_pressed("ui_accept") and not is_order_active:
 		customer_order()
@@ -121,5 +133,5 @@ func customer_order() -> void:
 	
 func _on_scoop_missed() -> void:
 	print("scoop missed")
-	dropper.create_scoop(next_color) #TEMP TEST
+	dropper.create_scoop(next_color()) #TEMP TEST
 	pass #TODO end the scoop drop and go to next customer or end of day
