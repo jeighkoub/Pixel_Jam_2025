@@ -63,6 +63,13 @@ scoop_scene = ExtResource("17_ccjbw")
 success_scene = ExtResource("3_hv65v")
 fail_scene = ExtResource("4_3v3a8")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -22.0
+offset_top = -427.0
+offset_right = 381.0
+offset_bottom = -9.0
+color = Color(0.0666667, 0.054902, 0.105882, 1)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 53)
 
