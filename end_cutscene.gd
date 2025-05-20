@@ -26,4 +26,9 @@ func start_cutscene():
 		tween.tween_property(color_rect, "color", Color(0, 0, 0, 1.0), 1.0).set_trans(Tween.TRANS_LINEAR)
 		await tween.finished
 
-		get_tree().change_scene_to_file("res://assets/cutscene_scenes/game_over.tscn") #TODO end of game. move to main menu?
+		#get_tree().change_scene_to_file("res://assets/cutscene_scenes/game_over.tscn") #TODO end of game. move to main menu?
+		var scn = load("res://assets/cutscene_scenes/game_over.tscn").instantiate()
+		scn.profit = 1 << 63
+		get_tree().current_scene.queue_free()
+		get_tree().root.add_child(scn)
+		get_tree().current_scene = scn
