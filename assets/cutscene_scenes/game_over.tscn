@@ -249,7 +249,7 @@ cache/0/50/0/glyphs/69/size = Vector2(27, 36)
 cache/0/50/0/glyphs/69/uv_rect = Rect2(1, 37, 27, 36)
 cache/0/50/0/glyphs/69/texture_idx = 0
 
-[node name="GameOver" type="Control"]
+[node name="GameOver" type="Control" node_paths=PackedStringArray("profit_number_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -257,6 +257,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u2os4")
+profit_number_label = NodePath("CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer3/ProfitNumber")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -301,6 +302,7 @@ theme_override_fonts/font = ExtResource("2_3fhvm")
 text = "Profit:"
 
 [node name="ProfitNumber" type="Label" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.996078, 0.682353, 0.203922, 1)
 theme_override_fonts/font = SubResource("FontFile_kdssl")

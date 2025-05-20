@@ -1,8 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://cfa1pp2khtna8"]
+[gd_scene load_steps=28 format=3 uid="uid://cfa1pp2khtna8"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_g1irq"]
 [ext_resource type="Texture2D" uid="uid://d3feptx88eswe" path="res://assets/truck_interior/order_walkup_firsthalf_1.png" id="2_6eull"]
 [ext_resource type="Texture2D" uid="uid://ddpeow8ctmnhx" path="res://assets/truck_interior/order_walkup_firsthalf_2.png" id="3_40duv"]
+[ext_resource type="PackedScene" uid="uid://cb4bp5deiwpic" path="res://assets/cutscene_scenes/quarterly_report.tscn" id="3_hv65v"]
+[ext_resource type="PackedScene" uid="uid://4kvibjmvkh4b" path="res://assets/cutscene_scenes/game_over.tscn" id="4_3v3a8"]
 [ext_resource type="Texture2D" uid="uid://d3voh8lir4smx" path="res://assets/truck_interior/order_walkup_firsthalf_3.png" id="4_lfkhs"]
 [ext_resource type="Texture2D" uid="uid://ce7kfkyhix3gn" path="res://assets/truck_interior/order_walkup_firsthalf_4.png" id="5_iwvww"]
 [ext_resource type="Texture2D" uid="uid://djnk7p54ioj12" path="res://assets/truck_interior/order_walkup_firsthalf_5.png" id="6_fcjci"]
@@ -58,6 +60,8 @@ dropper = NodePath("Dropper")
 main_scoop = NodePath("Scoop")
 tower = NodePath("Tower")
 scoop_scene = ExtResource("17_ccjbw")
+success_scene = ExtResource("3_hv65v")
+fail_scene = ExtResource("4_3v3a8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 53)

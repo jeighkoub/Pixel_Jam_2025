@@ -38,7 +38,9 @@ data = PackedByteArray("AAEAAAAOAIAAAwBgRkZUTV+iLOMAAC44AAAAHEdERUYADwAeAAAuGAAA
 font_name = "KarenFat"
 style_name = "Medium"
 font_weight = 500
+subpixel_positioning = 0
 msdf_pixel_range = 8
+msdf_size = 128
 cache/0/16/0/ascent = 12.0
 cache/0/16/0/descent = 4.0
 cache/0/16/0/underline_position = 2.39063
@@ -251,7 +253,9 @@ data = PackedByteArray("AAEAAAAOAIAAAwBgRkZUTV+iLOMAAC44AAAAHEdERUYADwAeAAAuGAAA
 font_name = "KarenFat"
 style_name = "Medium"
 font_weight = 500
+subpixel_positioning = 0
 msdf_pixel_range = 8
+msdf_size = 128
 cache/0/16/0/ascent = 12.0
 cache/0/16/0/descent = 4.0
 cache/0/16/0/underline_position = 2.39063
@@ -462,7 +466,7 @@ cache/0/50/0/glyphs/69/texture_idx = 0
 [sub_resource type="CanvasTexture" id="CanvasTexture_x2k5p"]
 specular_color = Color(0, 0, 0, 1)
 
-[node name="QuarterlyReport" type="Control"]
+[node name="QuarterlyReport" type="Control" node_paths=PackedStringArray("RevenueNumber", "ExpensesNumber", "ProfitNumber")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -472,6 +476,9 @@ offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nl2lk")
+RevenueNumber = NodePath("CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer/RevenueNumber")
+ExpensesNumber = NodePath("CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer2/ExpensesNumber")
+ProfitNumber = NodePath("CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer3/ProfitNumber")
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 layout_mode = 0
@@ -511,6 +518,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="RevenueNumber" type="Label" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.388235, 0.780392, 0.301961, 1)
 theme_override_fonts/font = ExtResource("2_riaaw")
@@ -530,6 +538,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ExpensesNumber" type="Label" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.894118, 0.231373, 0.266667, 1)
 theme_override_fonts/font = SubResource("FontFile_s3iau")
@@ -550,6 +559,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ProfitNumber" type="Label" parent="CenterContainer2/VBoxContainer2/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.996078, 0.682353, 0.203922, 1)
 theme_override_fonts/font = SubResource("FontFile_k0iyt")

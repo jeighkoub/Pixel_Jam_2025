@@ -13,7 +13,12 @@ var is_order_active: bool = false
 
 @export var success_scene: PackedScene
 @export var fail_scene: PackedScene
-
+var tier: int = 0
+var arr = [
+	"res://assets/cutscene_scenes/trashed_truck_cutscene.tscn",
+	"res://assets/cutscene_scenes/clean_truck_cutscene.tscn",
+	"res://assets/cutscene_scenes/gold_truck_cutscene.tscn"
+]
 
 
 var scoop_colors: Array
@@ -21,8 +26,8 @@ func next_color() -> String:
 	var colors = ["green", "red", "blue"]
 	return colors[randi() % colors.size()]
 
-var num_scoops_successful: int
-var num_scoops_goal: int
+var num_scoops_successful: int = 0
+var num_scoops_goal: int = 5
 
 
 # SO WE CAN CYCLE THROUGH RANDOM TRACKS
@@ -131,7 +136,23 @@ func customer_order() -> void:
 	if has_node("WalkPause/Sprite"):
 		$WalkPause.visible = false
 	
+func game_end() -> void:
+	var next_scene
+	if num_scoops_successful >= num_scoops_goal:
+		next_scene = success_scene.instantiate()
+		next_scene.tier = self.tier + 1
+	else:
+		next_scene = fail_scene.instantiate()
+		next_scene.tier = self.tier
+		next_scene.profit_number = 0
+	#change scene
+	get_tree().current_scene.queue_free()
+	get_tree().root.add_child(next_scene)
+	get_tree().current_scene = next_scene
+	
+		
+		
+	
 func _on_scoop_missed() -> void:
 	print("scoop missed")
-	dropper.create_scoop(next_color()) #TEMP TEST
-	pass #TODO end the scoop drop and go to next customer or end of day
+	game_end()
