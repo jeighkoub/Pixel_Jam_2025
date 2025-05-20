@@ -55,23 +55,23 @@ animations = [{
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("target", "dropper", "main_scoop", "tower")]
 script = ExtResource("1_g1irq")
+scoop_scene = ExtResource("17_ccjbw")
+success_scene = ExtResource("3_hv65v")
+fail_scene = ExtResource("4_3v3a8")
 target = NodePath("Tower/Target")
 dropper = NodePath("Dropper")
 main_scoop = NodePath("Scoop")
 tower = NodePath("Tower")
-scoop_scene = ExtResource("17_ccjbw")
-success_scene = ExtResource("3_hv65v")
-fail_scene = ExtResource("4_3v3a8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -22.0
 offset_top = -427.0
 offset_right = 381.0
 offset_bottom = -9.0
-color = Color(0.0666667, 0.054902, 0.105882, 1)
+color = Color(0.0941176, 0.0784314, 0.145098, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(160, 53)
+position = Vector2(160, 90)
 
 [node name="Score" type="Label" parent="Camera2D"]
 unique_name_in_owner = true
@@ -85,6 +85,7 @@ theme_override_fonts/font = ExtResource("11_djkbk")
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 script = ExtResource("12_2e2fe")
+LARGE_CHANGE_THRESHOLD = 400
 
 [node name="Snowflakes" parent="Camera2D" instance=ExtResource("13_w2te4")]
 unique_name_in_owner = true
@@ -125,10 +126,10 @@ sprite_frames = SubResource("SpriteFrames_rshw3")
 visible = false
 
 [node name="Scoop" parent="." instance=ExtResource("17_ccjbw")]
-position = Vector2(167, 10)
+position = Vector2(167, 24)
 
 [node name="Cone" type="Sprite2D" parent="."]
-position = Vector2(165, 81)
+position = Vector2(165, 135.5)
 texture = ExtResource("16_cwrmj")
 
 [node name="Arm" type="Sprite2D" parent="Cone"]
@@ -147,26 +148,36 @@ volume_db = 10.0
 
 [node name="Music3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_stefu")
+parameters/looping = true
 
 [node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_v2x15")
+parameters/looping = true
 
 [node name="Music1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_r8jn0")
+parameters/looping = true
 
 [node name="Dropper" parent="." node_paths=PackedStringArray("scoop") instance=ExtResource("18_vmu3t")]
-position = Vector2(167, 15)
+position = Vector2(167, 24)
 scoop = NodePath("../Scoop")
 
 [node name="Tower" parent="." instance=ExtResource("14_gmms0")]
-position = Vector2(165, 72)
+position = Vector2(165, 118)
 
 [node name="Target" parent="Tower" node_paths=PackedStringArray("falling_scoop") instance=ExtResource("15_gdfsq")]
 position = Vector2(-4.6136, 16.2043)
 falling_scoop = NodePath("../../Scoop")
 
 [node name="TruckInterior" type="Sprite2D" parent="."]
-visible = false
 z_index = -1
 position = Vector2(160, 0)
 texture = ExtResource("8_ggke1")
+
+[connection signal="blue_scoop" from="Dropper" to="Scoop" method="_on_dropper_blue_scoop"]
+[connection signal="blue_scoop" from="Dropper" to="Tower/Target" method="_on_dropper_blue_scoop"]
+[connection signal="green_scoop" from="Dropper" to="Scoop" method="_on_dropper_green_scoop"]
+[connection signal="green_scoop" from="Dropper" to="Tower/Target" method="_on_dropper_green_scoop"]
+[connection signal="red_scoop" from="Dropper" to="Scoop" method="_on_dropper_red_scoop"]
+[connection signal="red_scoop" from="Dropper" to="Tower/Target" method="_on_dropper_red_scoop"]
+[connection signal="hit_target" from="Tower/Target" to="Scoop" method="_on_target_hit_target"]

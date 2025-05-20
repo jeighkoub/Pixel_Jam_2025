@@ -25,7 +25,7 @@ var scoop_colors: Array
 func next_color() -> String:
 	var colors = ["green", "red", "blue"]
 	return colors[randi() % colors.size()]
-
+	
 var num_scoops_successful: int = 0
 var num_scoops_goal: int = 5
 

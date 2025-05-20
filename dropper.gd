@@ -6,8 +6,13 @@ extends Node2D
 @export var green: Resource
 @export var red: Resource
 
+signal red_scoop
+signal green_scoop
+signal blue_scoop
+
 func _ready():
 	create_scoop("red")
+	red_scoop.emit()
 
 func create_scoop(color: String) -> void:
 	print("creating    ", color)
@@ -17,16 +22,16 @@ func create_scoop(color: String) -> void:
 	match color:
 		"blue", "b":
 			scoop.get_node("Sprite2D").texture = blue
-			print("blue")
+			blue_scoop.emit()
 		"red", "r":
 			scoop.get_node("Sprite2D").texture = red
-			print("red")
+			red_scoop.emit()
 		"green", "g":
 			scoop.get_node("Sprite2D").texture = green
-			print("green")
+			green_scoop.emit()
 
 	scoop.visible = true
-
+	
 func drop():
 	scoop.velocity = Vector2(0,100)
 	scoop.set_physics_process(true)

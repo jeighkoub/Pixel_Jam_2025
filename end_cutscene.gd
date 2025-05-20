@@ -20,7 +20,7 @@ func start_cutscene():
 		tween.tween_property(color_rect, "color", Color(0, 0, 0, 0), 1.0).set_trans(Tween.TRANS_LINEAR)
 		await tween.finished
 
-		await get_tree().create_timer(5.0).timeout
+		await get_tree().create_timer(3.0).timeout
 
 		tween = create_tween()
 		tween.tween_property(color_rect, "color", Color(0, 0, 0, 1.0), 1.0).set_trans(Tween.TRANS_LINEAR)
