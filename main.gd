@@ -141,6 +141,7 @@ func game_end() -> void:
 	if num_scoops_successful >= num_scoops_goal:
 		next_scene = success_scene.instantiate()
 		next_scene.tier = self.tier + 1
+		next_scene.revenue = %Score.points 
 	else:
 		next_scene = fail_scene.instantiate()
 		next_scene.tier = self.tier

@@ -1,6 +1,4 @@
 extends Control
-func _ready() -> void:
-	$AudioStreamPlayer.play()
 
 var tier: int
 var arr = [
@@ -13,6 +11,13 @@ var arr = [
 @export var ProfitNumber: Label
 var revenue: int
 var expenses: int = 100
+
+func _ready() -> void:
+	$AudioStreamPlayer.play()
+	RevenueNumber.text = str(revenue)
+	ExpensesNumber.text = "1000"
+	ProfitNumber.text = str(revenue - 1000)
+
 
 	
 func _input(event: InputEvent) -> void:
